@@ -8,6 +8,23 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Image x:Name="NickB" HorizontalAlignment="Left" Height="200" Margin="10,10,0,0" VerticalAlignment="Top" Width="105" Source="Assets/images/NickB.jpg" />
+        <Image x:Name="ValR" HorizontalAlignment="Left" Height="200" Margin="110,10,0,0" VerticalAlignment="Top" Width="105" Source="Assets/images/ValR.jpg"/>
+        <Image x:Name="TylerR" HorizontalAlignment="Left" Height="200" Margin="215,10,0,0" VerticalAlignment="Top" Width="138" Source="Assets/images/TylerR.jpg"/>
+        <ComboBox x:Name="CurrentCountry" HorizontalAlignment="Left" Margin="10,340,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="CurrentCountry_SelectionChanged">
+            <ComboBoxItem>US</ComboBoxItem>
+            <ComboBoxItem>Mexico</ComboBoxItem>
+            <ComboBoxItem>UK</ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="TargetCountry" HorizontalAlignment="Left" Margin="230,340,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="CurrentCountry_SelectionChanged">
+            <ComboBoxItem>US</ComboBoxItem>
+            <ComboBoxItem>Mexico</ComboBoxItem>
+            <ComboBoxItem>UK</ComboBoxItem>
+        </ComboBox>
+        <TextBox x:Name="CurrentAmountTextBox" HorizontalAlignment="Left" Margin="10,377,0,0" TextWrapping="Wrap" Text="Enter amount" VerticalAlignment="Top"/>
+        <TextBlock x:Name="OutputTextBlock" HorizontalAlignment="Left" Margin="230,377,0,0" TextWrapping="Wrap" Text="Output" VerticalAlignment="Top"/>
+        <Button x:Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Margin="230,588,0,0" VerticalAlignment="Top" Height="52" Width="123" Click="QuitButton_Click"/>
+        <Button x:Name="CalculateButton" Content="Calculate" HorizontalAlignment="Left" Margin="10,588,0,0" VerticalAlignment="Top" Height="52" Width="100" Click="CalculateButton_Click"/>
 
     </Grid>
 </Page>

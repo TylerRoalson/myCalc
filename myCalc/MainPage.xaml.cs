@@ -26,5 +26,54 @@ namespace myCalc
         {
             this.InitializeComponent();
         }
+
+        private void QuitButton_Click(object sender, RoutedEventArgs e)
+        {
+            App.Current.Exit();
+        }
+
+        private void CalculateButton_Click(object sender, RoutedEventArgs e)
+        {
+            decimal CurrentAmount = 0;
+            decimal[] ExchangeRates = { 1, 17.62M, 0.77M };
+            //OutputTextBlock.Text = Convert.ToString(CurrentAmountTextBox.Text);
+            try
+            {
+                CurrentAmount = Convert.ToDecimal(CurrentAmountTextBox.Text);
+                decimal calculation = 0;
+                var selectedindex = CurrentCountry.SelectedIndex;
+                var targetindex = TargetCountry.SelectedIndex;
+                if (selectedindex == 0)
+                {
+                    calculation = CurrentAmount * ExchangeRates[targetindex];
+                    OutputTextBlock.Text = Convert.ToString(calculation);
+                }
+                else if (targetindex == 0)
+                {
+                    calculation = CurrentAmount / ExchangeRates[selectedindex];
+                    OutputTextBlock.Text = Convert.ToString(calculation);
+                }
+                else
+                {
+                    calculation = CurrentAmount / ExchangeRates[selectedindex];
+                    calculation = calculation * ExchangeRates[targetindex];
+                    OutputTextBlock.Text = Convert.ToString(calculation);
+                }
+            }
+            catch (Exception a)
+            {
+                OutputTextBlock.Text = Convert.ToString(a);
+            }
+        }
+
+        private void CurrentCountry_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //var selectedindex = CurrentCountry.SelectedIndex;
+        }
+
+        private void TargetCountry_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //var targetindex = TargetCountry.SelectedIndex;
+        }
     }
 }
